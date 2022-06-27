@@ -9,8 +9,17 @@ const finCompra = document.getElementById('fin-compra')
 const contadorCarrito = document.getElementById('contadorCarrito')
 const precioTotal = document.getElementById('precioTotal')
 
-const selecTalles = document.getElementById('selecTalles')
+const selecCategoria = document.getElementById('selecCategoria')
 const buscador = document.getElementById('search')
+
+
+
+
+
+
+
+
+
 
 mostrarProductos()
 
@@ -19,7 +28,7 @@ function mostrarProductos() {
         let div = document.createElement('div')
         div.className = 'col-4 mb-5'
         div.innerHTML = `   <div class="card" style="width: 18rem;">
-                                <img src="${el.img}" class="card-img-top" alt="${el.nombre}">
+                                <img src="${el.img}" class="card-img-top w-75" alt="${el.nombre}">
                                 <div class="card-body">
                                     <h5 class="card-title">${el.nombre}</h5>
                                     <p class="card-subtitle mb-2 text-muted">${el.descrpcion}</p>
@@ -38,5 +47,33 @@ function mostrarProductos() {
 function agregarAlCarrito(id) {
     let productoAgregar = stockProductos.find(item => item.id === id)
     carritoDeCompras.push(productoAgregar)
+    mostrarCarrito(productoAgregar)
+    actualizarCarrito()
+
+    localStorage.setItem('carrito', JSON.stringify(carritoDeCompras))
 }
 
+function mostrarCarrito(productoAgregar) {
+    let div = document.createElement('div')
+    div.className = 'productoEnCarrito'
+    div.innerHTML = `   <p>${productoAgregar.nombre}</p>
+                        <p>Precio: $${productoAgregar.precio}</p>
+                        <button id="eliminar${productoAgregar.id}" class="boton-eliminar"><i class="bi bi-trash"></i></button>` 
+    contenedorCarrito.appendChild(div)
+}
+
+function actualizarCarrito() {
+    contadorCarrito.innerText = carritoDeCompras.length
+    precioTotal.innerText = carritoDeCompras.reduce((acc,el)=> acc + el.precio,0)
+}
+
+function recuperar() {
+    let recuperarLS = JSON.parse(localStorage.getItem('carrito'))
+    for (const elemento of recuperarLS) {
+        mostrarCarrito(elemento)
+        carritoDeCompras.push(elemento)
+        actualizarCarrito()
+    }
+}
+
+recuperar()
