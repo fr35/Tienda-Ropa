@@ -9,18 +9,8 @@ const finCompra = document.getElementById('fin-compra')
 const contadorCarrito = document.getElementById('contadorCarrito')
 const precioTotal = document.getElementById('precioTotal')
 
-const selecCategoriaHombre = document.getElementById('selecCategoriaHombre')
-const selecCategoriaMujer = document.getElementById('selecCategoriaMujer')
+const selecCategoria = document.getElementById('selecCategoria')
 const buscador = document.getElementById('search')
-
-
-
-
-
-
-
-
-
 
 
 mostrarProductos()
@@ -28,9 +18,9 @@ mostrarProductos()
 function mostrarProductos() {
     stockProductos.forEach(el=> {
         let div = document.createElement('div')
-        div.className = 'col-4 mb-5'
+        div.className = 'producto'
         div.innerHTML = `   <div class="card" style="width: 14rem;">
-                                <img src="${el.img}" class="card-img-top w-75" alt="${el.nombre}">
+                                <img src="${el.img}" class="card-img-top" alt="${el.nombre}">
                                 <div class="card-body">
                                     <h5 class="card-title">${el.nombre}</h5>
                                     <p class="card-subtitle mb-2 text-muted">${el.descrpcion}</p>
@@ -60,8 +50,16 @@ function mostrarCarrito(productoAgregar) {
     div.className = 'productoEnCarrito'
     div.innerHTML = `   <p>${productoAgregar.nombre}</p>
                         <p>Precio: $${productoAgregar.precio}</p>
-                        <button id="eliminar${productoAgregar.id}" class="boton-eliminar"><i class="bi bi-trash"></i></button>` 
+                        <button id="eliminar${productoAgregar.id}" class="boton-eliminar"><i class="bi bi-trash h5"></i></button>` 
     contenedorCarrito.appendChild(div)
+
+    let btnEliminar = document.getElementById(`eliminar${productoAgregar.id}`)
+    btnEliminar.addEventListener('click',()=>{
+        btnEliminar.parentElement.remove()
+        carritoDeCompras = carritoDeCompras.filter(ele => ele.id !== productoAgregar.id)
+        actualizarCarrito()
+        localStorage.setItem('carrito', JSON.stringify(carritoDeCompras))
+    })
 }
 
 function actualizarCarrito() {
