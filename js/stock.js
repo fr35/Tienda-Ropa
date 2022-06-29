@@ -169,49 +169,6 @@ let stockProductos = [
 
 
 
-let stockHombreBuzo = [
-    {id: 12, tipo: "buzo", sexo: "hombre", nombre: "Buzo Rustico Brandon", precio: 10300, descrpcion: "Buzo Cuello Redondo", img: "fotos/id-12.jpeg"},
-    {id: 13, tipo: "buzo", sexo: "hombre", nombre: "Buzo Rustico Brandon", precio: 10300, descrpcion: "Buzo Cuello Redondo", img: "fotos/id-13.jpeg"},
-    {id: 14, tipo: "buzo", sexo: "hombre", nombre: "Buzo Rustico Brandon", precio: 10300, descrpcion: "Buzo Cuello Redondo", img: "fotos/id-14.jpeg"},
-    {id: 15, tipo: "buzo", sexo: "hombre", nombre: "Buzo Luxor", precio: 7550, descrpcion: "Buzo Con Capucha", img: "fotos/id-15.jpeg"},
-    {id: 16, tipo: "buzo", sexo: "hombre", nombre: "Buzo Luxor", precio: 7550, descrpcion: "Buzo Con Capucha", img: "fotos/id-16.jpeg"},
-    {id: 17, tipo: "buzo", sexo: "hombre", nombre: "Buzo Jazz", precio: 9150, descrpcion: "Buzo Rustico Cuello Redondo", img: "fotos/id-17.jpeg"},
-    {id: 18, tipo: "buzo", sexo: "hombre", nombre: "Buzo Jazz", precio: 9150, descrpcion: "Buzo Rustico Cuello Redondo", img: "fotos/id-18.jpeg"},
-    {id: 19, tipo: "buzo", sexo: "hombre", nombre: "Buzo Jazz", precio: 9150, descrpcion: "Buzo Rustico Cuello Redondo", img: "fotos/id-19.jpeg"},
-    {id: 20, tipo: "buzo", sexo: "hombre", nombre: "Buzo Campera Combinada", precio: 12600, descrpcion: "Campera Con Cierre", img: "fotos/id-20.jpeg"},
-    {id: 21, tipo: "buzo", sexo: "hombre", nombre: "Buzo Campera Combinada", precio: 12600, descrpcion: "Campera Con Cierre", img: "fotos/id-21.jpeg"},
-]
-
-let stockHombrePantalon = [
-    {id: 29, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Jean Aiden", precio: 10850, descrpcion: "Jeans Tiro Medio", img: "fotos/id-29.jpeg"},
-    {id: 30, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Jean Mason", precio: 10850, descrpcion: "Jeans Tiro Medio", img: "fotos/id-30.jpeg"},
-    {id: 31, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Jean Thomas", precio: 10850, descrpcion: "Jeans Tiro Medio", img: "fotos/id-31.jpeg"},
-    {id: 32, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Jean Sport Corderoy", precio: 14500, descrpcion: "Pantalón Tiro Medio", img: "fotos/id-32.jpeg"},
-    {id: 33, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Jean Lona", precio: 9150, descrpcion: "Jeans Corte Clasico", img: "fotos/id-33.jpeg"},
-    {id: 34, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Sport Corderoy", precio: 12500, descrpcion: "Pantalon Corte Clasico", img: "fotos/id-34.jpeg"},
-    {id: 35, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Corderoy", precio: 17250, descrpcion: "Pantalon Corderoy", img: "fotos/id-35.jpeg"},
-    {id: 36, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Jogger Royce", precio: 6150, descrpcion: "Jogger", img: "fotos/id-36.jpeg"},
-    {id: 37, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Jogger Royce", precio: 8300, descrpcion: "Jogger", img: "fotos/id-37.jpeg"},
-    {id: 38, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Jogger Royce", precio: 8300, descrpcion: "Jogger", img: "fotos/id-38.jpeg"},
-    {id: 39, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Jogger Royce", precio: 8300, descrpcion: "Jogger", img: "fotos/id-39.jpeg"},
-    {id: 40, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Jean Blanco", precio: 8100, descrpcion: "Jean Blanco", img: "fotos/id-40.jpeg"},
-    {id: 41, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Jean Black", precio: 8100, descrpcion: "Jean Negro", img: "fotos/id-41.jpeg"},
-    {id: 42, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Fantasía S100", precio: 9850, descrpcion: "Pantalón Vestir", img: "fotos/id-42.jpeg"},
-    {id: 43, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Vestir Armani S100", precio: 10300, descrpcion: "Pantalón Vestir", img: "fotos/id-43.jpeg"},
-    {id: 44, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Gabardina 5 Bols", precio: 14450, descrpcion: "Pantalón Gabardina", img: "fotos/id-44.jpeg"},
-    {id: 45, tipo: "pantalon", sexo: "hombre", nombre: "Pantalón Vestir Clásico", precio: 8700, descrpcion: "Pantalón Vestir", img: "fotos/id-45.jpeg"},
-]
-
-let stockHombreCampera = [
-    {id: 22, tipo: "campera", sexo: "hombre", nombre: "Campera Jill Jean", precio: 21850, descrpcion: "Campera Jean", img: "fotos/id-22.jpeg"},
-    {id: 23, tipo: "campera", sexo: "hombre", nombre: "Campera Micro Matelasse", precio: 26500, descrpcion: "Campera Micro Matelasse", img: "fotos/id-23.jpeg"},
-    {id: 24, tipo: "campera", sexo: "hombre", nombre: "Campera Reversible Matelasse", precio: 33400, descrpcion: "Campera Reversible", img: "fotos/id-24.jpeg"},
-    {id: 25, tipo: "campera", sexo: "hombre", nombre: "Campera Con Capucha", precio: 33400, descrpcion: "Campera Con Capucha", img: "fotos/id-25.jpeg"},
-    {id: 26, tipo: "campera", sexo: "hombre", nombre: "Campera Braxton Jean", precio: 12400, descrpcion: "Campera Jean", img: "fotos/id-26.jpeg"},
-    {id: 27, tipo: "campera", sexo: "hombre", nombre: "Campera Parka Con Capucha", precio: 41500, descrpcion: "Campera Parka Larga", img: "fotos/id-27.jpeg"},
-    {id: 28, tipo: "campera", sexo: "hombre", nombre: "Campera Microfibra 3/4", precio: 31100, descrpcion: "Campera Con Capucha", img: "fotos/id-28.jpeg"},
-]
-
 let stockHombreSweater = [
     {id: 46, tipo: "sweater", sexo: "hombre", nombre: "Sweater Bamberg", precio: 12200, descrpcion: "Sweater Escote V", img: "fotos/id-46.jpeg"},
     {id: 47, tipo: "sweater", sexo: "hombre", nombre: "Sweater Loket", precio: 12200, descrpcion: "Sweater Escote V", img: "fotos/id-47.jpeg"},
@@ -225,16 +182,5 @@ let stockHombreSweater = [
     {id: 55, tipo: "sweater", sexo: "hombre", nombre: "Chomba Matthew Manga Larga", precio: 8000, descrpcion: "Chomba Sweater", img: "fotos/id-55.jpeg"},
 ]
 
-let stockHombreSaco = [
-    {id: 56, tipo: "saco", sexo: "hombre", nombre: "Saco Coderina Santiago", precio: 40350, descrpcion: "Saco Sport Regular Fit", img: "fotos/id-56.jpeg"},
-    {id: 57, tipo: "saco", sexo: "hombre", nombre: "Saco Sport Regular", precio: 48900, descrpcion: "Saco Sport Regular", img: "fotos/id-57.jpeg"},
-    {id: 58, tipo: "saco", sexo: "hombre", nombre: "Saco Sport Lana", precio: 46100, descrpcion: "Saco Sport Lana", img: "fotos/id-58.jpeg"},
-    {id: 59, tipo: "saco", sexo: "hombre", nombre: "Saco Slim Fit Lana", precio: 36400, descrpcion: "Saco Slim Fit Lana", img: "fotos/id-59.jpeg"},
-    {id: 60, tipo: "saco", sexo: "hombre", nombre: "Saco Corderoy Wally", precio: 20800, descrpcion: "Saco Corderoy", img: "fotos/id-60.jpeg"},
-    {id: 61, tipo: "saco", sexo: "hombre", nombre: "Saco Sport Escocés", precio: 27650, descrpcion: "Saco Sport", img: "fotos/id-61.jpeg"},
-    {id: 62, tipo: "saco", sexo: "hombre", nombre: "Saco Sport Plaque", precio: 29950, descrpcion: "Saco Sport", img: "fotos/id-62.jpeg"},
-    {id: 63, tipo: "saco", sexo: "hombre", nombre: "Blazer Sport", precio: 33400, descrpcion: "Blazer Sport", img: "fotos/id-63.jpeg"},
-    {id: 64, tipo: "saco", sexo: "hombre", nombre: "Saco Sport Cuadros Slim Fit", precio: 39200, descrpcion: "Saco Sport Slim Fit", img: "fotos/id-64.jpeg"},
-    {id: 65, tipo: "saco", sexo: "hombre", nombre: "Saco Sport Velvet", precio: 15600, descrpcion: "Saco Sport", img: "fotos/id-65.jpeg"},
-]
+
 
