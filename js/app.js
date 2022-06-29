@@ -32,6 +32,12 @@ function mostrarProductos() {
         let btnAgregar = document.getElementById(`boton${el.id}`)
         btnAgregar.addEventListener('click',()=>{
             agregarAlCarrito(el.id)
+            Toastify({
+                text: "El producto ha sido añadido al carrito",
+                duration: 3000,
+                gravity: "bottom",
+                position: "right"
+            }).showToast();
         })
     })
 }
@@ -54,11 +60,27 @@ function mostrarCarrito(productoAgregar) {
     contenedorCarrito.appendChild(div)
 
     let btnEliminar = document.getElementById(`eliminar${productoAgregar.id}`)
-    btnEliminar.addEventListener('click',()=>{
-        btnEliminar.parentElement.remove()
-        carritoDeCompras = carritoDeCompras.filter(ele => ele.id !== productoAgregar.id)
-        actualizarCarrito()
-        localStorage.setItem('carrito', JSON.stringify(carritoDeCompras))
+    btnEliminar.addEventListener('click', () => {
+        Swal.fire({
+            title: 'Está seguro de eliminar el producto?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Eliminar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Eliminado',
+                    'Su producto ha sido eliminado con exito',
+                    'success'
+                )
+                btnEliminar.parentElement.remove()
+                carritoDeCompras = carritoDeCompras.filter(ele => ele.id !== productoAgregar.id)
+                actualizarCarrito()
+                localStorage.setItem('carrito', JSON.stringify(carritoDeCompras))
+            }
+        })
     })
 }
 
