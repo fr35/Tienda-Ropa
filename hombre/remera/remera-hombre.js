@@ -16,7 +16,7 @@ const buscador = document.getElementById('search')
 mostrarProductos()
 
 function mostrarProductos() {
-    stockProductos.forEach(el=> {
+    stockHombreRemera.forEach(el=> {
         let div = document.createElement('div')
         div.className = 'producto'
         div.innerHTML = `   <div class="card border-light">
@@ -37,7 +37,7 @@ function mostrarProductos() {
 }
 
 function agregarAlCarrito(id) {
-    let productoAgregar = stockProductos.find(item => item.id === id)
+    let productoAgregar = stockHombreRemera.find(item => item.id === id)
     carritoDeCompras.push(productoAgregar)
     mostrarCarrito(productoAgregar)
     actualizarCarrito()
