@@ -3,8 +3,8 @@
     padding: 0%;
     box-sizing: border-box;
 }
-.fixed-top {
-    top: auto;
+.titulo {
+    font-family: 'Roboto', sans-serif;
 }
 header {
     display: flex;
@@ -12,36 +12,53 @@ header {
     align-items: center;
     padding: 10px 10%;
     box-shadow: 0px 5px 4px 3px rgba(0, 0, 0, 0.3);
-    margin-bottom: 20px;
     background-color: #121212;
 }
 #botonBurger {
     border: none;
     font-size: 2rem;
 }
+.bi-x {
+    font-size: 2rem;
+    padding-left: 15rem;
+}
+.bi-x:hover {
+    cursor: pointer;
+}
 .sidebar {
-    background-color: #121212;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    max-width: 25%;
+    background-color: #121212;
+}
+a.nav-link:hover {
+    text-decoration: underline;
 }
 .sidebar-container-items {
     list-style: none;
+    color: white;
+    padding-left: 5rem;
 }
 .sidebar-items {
     list-style: none;
     text-decoration: none;
     color: white;
 }
+.sidebar-items:hover {
+    color: white;
+    text-decoration: underline;
+}
+
 .buscar input {
     width: 20rem;
     height: 3rem;
     padding: 0 20px;
-    color: black;
+    color: white;
     outline: none;
     border: 1px solid silver;
     border-radius: 2rem;
+    background-color: #121212;
 }
 .buscador {
     font-size: 1.5rem;
@@ -53,13 +70,14 @@ header {
 
 #boton-carrito {
     color: white;
+    font-size: 1.8rem;
 }
 #boton-carrito:hover {
     cursor: pointer;
     color: white;
 }
 #contenedor-productos {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 20px auto;
     display: flex;
     justify-content: space-between;
@@ -67,8 +85,7 @@ header {
 }
 
 .producto {
-    padding: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 5rem;
     box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.3);
 }
 .card {
@@ -77,10 +94,12 @@ header {
 .card-title {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .card-subtitle {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .btn-prod {
     background-color: #121212;
@@ -88,10 +107,10 @@ header {
     display: flex;
     justify-content: center;
 }
-
+.btn-prod:hover {
+    color: white;
+}
 .modal-contenedor {
-    top: 0;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,20 +118,17 @@ header {
 }
 
 .productoEnCarrito {
-    border-left: 5px solid gray;
-    border-bottom-left-radius: 3px;
-    border-top-left-radius: 3px;
-    margin: 5px 0;
-    padding: 5px 10px;
+    margin: 1rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 15px;
 }
 .boton-eliminar {
     background-color: white;
     color: gray;
     border: none;
-    font-size: 20px;
+    font-size: 15px;
 }
 .boton-eliminar:hover {
     cursor: pointer;
@@ -121,3 +137,13 @@ header {
     font-weight: bold;
 }
 
+.seleccion {
+    display: flex;
+    justify-content: center;
+    padding: 0rem 0.5rem;
+}
+#selecTalles {
+    padding: 0rem 0.5rem;
+    background-color: #121212;
+    color: white;
+}

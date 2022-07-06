@@ -36,7 +36,7 @@ function mostrarProductos() {
                 text: "El producto ha sido añadido al carrito",
                 duration: 3000,
                 gravity: "bottom",
-                position: "right"
+                position: "right",
             }).showToast();
         })
     })
