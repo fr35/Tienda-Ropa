@@ -91,6 +91,7 @@ a.nav-link:hover {
 .card {
     width: 14rem;
 }
+
 .card-title {
     display: flex;
     justify-content: center;

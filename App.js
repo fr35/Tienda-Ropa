@@ -19,7 +19,7 @@ function mostrarProductos() {
         let div = document.createElement('div')
         div.className = 'producto'
         div.innerHTML = `   <div class="card border-light">
-                                <img src="${el.img}" class="card-img-top" alt="${el.nombre}">
+                                <img src="${el.img}" class="card-img-top img-product" alt="${el.nombre}">
                                 <div class="card-body">
                                     <h5 class="card-title">${el.nombre}</h5>
                                     <p class="card-subtitle mb-2 text-muted">${el.descrpcion}</p>
@@ -80,7 +80,8 @@ function mostrarCarrito(productoAgregar) {
 
 function actualizarCarrito() {
     contadorCarrito.innerText = carritoDeCompras.length
-    precioFinish = precioTotal.innerText = carritoDeCompras.reduce((acc,el)=> acc + el.precio,0)
+    precioTotal.innerText = carritoDeCompras.reduce((acc,el)=> acc + el.precio,0)
+    terminar()
 }
 
 function recuperar() {
@@ -92,15 +93,13 @@ function recuperar() {
     }
 }
 
-
-
-
-function terminar(precioFinish) {
+function terminar() {
+    let precioFinish = parseInt(precioTotal.innerText);
     terminarCompra.addEventListener('click', () => {
-        if (precioFinish > 0) {
+        if ((precioFinish) > 0) {
             Swal.fire({
                 title: 'Está seguro de realizar la compra?',
-                icon: 'warning',
+                icon: 'succes',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
@@ -109,24 +108,15 @@ function terminar(precioFinish) {
                 if (result.isConfirmed) {
                     Swal.fire(
                         'Muchas Gracias!',
-                        'Su producto ha sido eliminado con exito',
+                        'Su compra ha sido realizada con exito',
                         'success'
                     )
                 }
             })
-        } else {
-            Toastify({
-                text: "No hay productos en el carrito",
-                duration: 3000,
-                gravity: "bottom",
-                position: "right",
-                style : {
-                    background: "#121212",
-                }
-            }).showToast();
+            
         }
+        
     })
 }
-precioFinish()
-terminar()
+
 recuperar()
