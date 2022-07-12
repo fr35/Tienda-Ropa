@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="public/css/styles.css">
 </head>
+
 <body>
+
     <header>
         <nav class="navbar navbar-dark" id="categorias">
             <div class="container-fluid">
@@ -19,7 +22,6 @@
                 </button>
                 <div class="offcanvas offcanvas-start sidebar" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title mt-5 pt-5" id="offcanvasNavbarLabel">Tienda de Ropa</h5>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
@@ -30,26 +32,26 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">Hombre</a>
                                 <ul class="sidebar-container-items">
-                                    <li><a href="hombre/remera/remera-hombre.html" class="sidebar-items">Remera</a></li>
-                                    <li><a href="hombre/buzo/buzo-hombre.html" class="sidebar-items">Buzo</a></li>
-                                    <li><a href="hombre/campera/campera-hombre.html" class="sidebar-items">Campera</a></li>
-                                    <li><a href="hombre/pantalon/pantalon-hombre.html" class="sidebar-items">Pantalón</a></li>
-                                    <li><a href="hombre/sweater/sweater-hombre.html" class="sidebar-items">Sweater</a></li>
-                                    <li><a href="hombre/saco/saco-hombre.html" class="sidebar-items">Saco</a></li>
-                                    <li><a href="hombre/abrigo/abrigo-hombre.html" class="sidebar-items">Abrigo</a></li>
+                                    <li><a href="hombre/remera/remera-hombre.html" class="sidebar-items" id="hombre-remera">Remera</a></li>
+                                    <li><a href="hombre/buzo/buzo-hombre.html" class="sidebar-items" id="hombre-buzo">Buzo</a></li>
+                                    <li><a href="hombre/campera/campera-hombre.html" class="sidebar-items" id="hombre-campera">Campera</a></li>
+                                    <li><a href="hombre/pantalon/pantalon-hombre.html" class="sidebar-items" id="hombre-pantalon">Pantalón</a></li>
+                                    <li><a href="hombre/sweater/sweater-hombre.html" class="sidebar-items" id="hombre-sweater">Sweater</a></li>
+                                    <li><a href="hombre/saco/saco-hombre.html" class="sidebar-items" id="hombre-saco">Saco</a></li>
+                                    <li><a href="hombre/abrigo/abrigo-hombre.html" class="sidebar-items" id="hombre-abrigo">Abrigo</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">Mujer</a>
                                 <ul class="sidebar-container-items">
-                                    <li><a href="Mujer/remera/remera-mujer.html" class="sidebar-items">Remera</a></li>
-                                    <li><a href="Mujer/vestido/vestido-mujer.html" class="sidebar-items">Vestido</a></li>
-                                    <li><a href="Mujer/campera/campera-mujer.html" class="sidebar-items">Campera</a></li>
-                                    <li><a href="Mujer/pantalon/pantalon-mujer.html" class="sidebar-items">Pantalón</a></li>
-                                    <li><a href="Mujer/pollera/pollera-mujer.html" class="sidebar-items">Pollera</a></li>
-                                    <li><a href="Mujer/sweater/sweater-mujer.html" class="sidebar-items">Sweater</a></li>
-                                    <li><a href="Mujer/saco/saco-mujer.html" class="sidebar-items">Saco</a></li>
-                                    <li><a href="Mujer/abrigo/abrigo-mujer.html" class="sidebar-items">Abrigo</a></li>
+                                    <li><a href="Mujer/remera/remera-mujer.html" class="sidebar-items" id="mujer-remera">Remera</a></li>
+                                    <li><a href="Mujer/vestido/vestido-mujer.html" class="sidebar-items" id="mujer-vestido">Vestido</a></li>
+                                    <li><a href="Mujer/campera/campera-mujer.html" class="sidebar-items" id="mujer-campera">Campera</a></li>
+                                    <li><a href="Mujer/pantalon/pantalon-mujer.html" class="sidebar-items" id="mujer-pantalon">Pantalón</a></li>
+                                    <li><a href="Mujer/pollera/pollera-mujer.html" class="sidebar-items" id="mujer-pollera">Pollera</a></li>
+                                    <li><a href="Mujer/sweater/sweater-mujer.html" class="sidebar-items" id="mujer-sweater">Sweater</a></li>
+                                    <li><a href="Mujer/saco/saco-mujer.html" class="sidebar-items" id="mujer-saco">Saco</a></li>
+                                    <li><a href="Mujer/abrigo/abrigo-mujer.html" class="sidebar-items" id="mujer-abrigo">Abrigo</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -58,12 +60,18 @@
             </div>
         </nav>
         <div class="buscar">
-            <input id="search" type="text" class="input" placeholder="Buscar producto" required><i class="bi bi-search h5 ms-3 buscador"></i>
+        <input id="search" type="text" class="input" placeholder="Buscar producto" required><i class="bi bi-search h5 ms-3 buscador"></i>
         </div>
         <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="boton-carrito">
-            <i class="bi bi-bag" style="font-size: 2rem"><span id="contadorCarrito">0</span></i>
+        <i class="bi bi-bag" style="font-size: 2rem"><span id="contadorCarrito">0</span></i>
         </button>
     </header>
+
+
+    <main>
+        <div class="" id="contenedor-productos">
+        </div>
+    </main>
 
     <div class="modal-contenedor">
         <div class="modal-carrito">
@@ -90,16 +98,17 @@
         </div>
     </div>
 
-    <main>
-        <div class="" id="contenedor-productos">
-            
-        </div>
-    </main>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="stock.js"></script>
-    <script src="app.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    
+    <script src="App.js" type="module"></script>
+    <script src="index.js" type="module"></script>
+    <script src="getData.js" type="module"></script>
 </body>
+
 </html>
+
