@@ -68,8 +68,11 @@ a.nav-link:hover {
   color: white;
 }
 
-#boton-carrito {
+#botonBurger:hover {
   color: white;
+}
+#boton-carrito {
+  color:  rgba(255, 255, 255, 0.582);
   font-size: 1.8rem;
 }
 #boton-carrito:hover {

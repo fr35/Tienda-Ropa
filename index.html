@@ -16,51 +16,14 @@
 
     <header>
         <nav class="navbar navbar-dark" id="categorias">
-            <div class="container-fluid">
+            <div class="container-fluid" id="menu">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" id="botonBurger">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon" id="btnMenu"></span>
                 </button>
-                <div class="offcanvas offcanvas-start sidebar" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav flex-grow-1 pe-3" id="sidebar-container">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="../../index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Hombre</a>
-                                <ul class="sidebar-container-items">
-                                    <li><a href="hombre/remera/remera-hombre.html" class="sidebar-items" id="hombre-remera">Remera</a></li>
-                                    <li><a href="hombre/buzo/buzo-hombre.html" class="sidebar-items" id="hombre-buzo">Buzo</a></li>
-                                    <li><a href="hombre/campera/campera-hombre.html" class="sidebar-items" id="hombre-campera">Campera</a></li>
-                                    <li><a href="hombre/pantalon/pantalon-hombre.html" class="sidebar-items" id="hombre-pantalon">Pantalón</a></li>
-                                    <li><a href="hombre/sweater/sweater-hombre.html" class="sidebar-items" id="hombre-sweater">Sweater</a></li>
-                                    <li><a href="hombre/saco/saco-hombre.html" class="sidebar-items" id="hombre-saco">Saco</a></li>
-                                    <li><a href="hombre/abrigo/abrigo-hombre.html" class="sidebar-items" id="hombre-abrigo">Abrigo</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Mujer</a>
-                                <ul class="sidebar-container-items">
-                                    <li><a href="Mujer/remera/remera-mujer.html" class="sidebar-items" id="mujer-remera">Remera</a></li>
-                                    <li><a href="Mujer/vestido/vestido-mujer.html" class="sidebar-items" id="mujer-vestido">Vestido</a></li>
-                                    <li><a href="Mujer/campera/campera-mujer.html" class="sidebar-items" id="mujer-campera">Campera</a></li>
-                                    <li><a href="Mujer/pantalon/pantalon-mujer.html" class="sidebar-items" id="mujer-pantalon">Pantalón</a></li>
-                                    <li><a href="Mujer/pollera/pollera-mujer.html" class="sidebar-items" id="mujer-pollera">Pollera</a></li>
-                                    <li><a href="Mujer/sweater/sweater-mujer.html" class="sidebar-items" id="mujer-sweater">Sweater</a></li>
-                                    <li><a href="Mujer/saco/saco-mujer.html" class="sidebar-items" id="mujer-saco">Saco</a></li>
-                                    <li><a href="Mujer/abrigo/abrigo-mujer.html" class="sidebar-items" id="mujer-abrigo">Abrigo</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </nav>
         <div class="buscar">
-        <input id="search" type="text" class="input" placeholder="Buscar producto" required><i class="bi bi-search h5 ms-3 buscador"></i>
+        <input id="search" type="text" class="input" placeholder="Buscar producto" required>
         </div>
         <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="boton-carrito">
         <i class="bi bi-bag" style="font-size: 2rem"><span id="contadorCarrito">0</span></i>
@@ -105,6 +68,8 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     
+
+    <script src="side.js" type="module"></script>
     <script src="App.js" type="module"></script>
     <script src="index.js" type="module"></script>
     <script src="getData.js" type="module"></script>
