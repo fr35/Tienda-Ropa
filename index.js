@@ -1,10 +1,11 @@
-import { mostrarProductos } from "./App.js";
-import { abrirSide } from "./side.js";
+import { mostrarProductos, recuperar } from "./App.js";
+
+
 
 
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  mostrarProductos();
-  abrirSide()
+  mostrarProductos()
+  recuperar()
 })

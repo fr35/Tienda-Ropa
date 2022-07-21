@@ -1,39 +1,48 @@
 import { getData } from "./getData.js";
 
-
 let carritoDeCompras = []
 
 export const mostrarProductos = async () => {
     const productos = await getData();
     const contenedorProductos = document.getElementById("contenedor-productos");
+    productos.sort((a,b) => Math.random()-0.5)
     productos.forEach(producto => {
-    const div = document.createElement('div');
-    div.className = 'producto';
-    div.innerHTML = `   <div class="card border-light">
-                            <img src="${producto.img}" class="card-img-top img-product" alt="${producto.nombre}">
-                            <div class="card-body">
-                                <h5 class="card-title">${producto.nombre}</h5>
-                                <h5 class="card-title">$${producto.precio}</h5>
-                                <a id="boton${producto.id}" href="#" class="btn btn-prod">Agregar al Carrito</a>
-                            </div>
-                        </div>`
-    contenedorProductos.appendChild(div);
-
+    const allProducts = document.createElement('div');
+    allProducts.className = 'producto ms-2 me-2';
+    allProducts.setAttribute("id","producto")
+    allProducts.innerHTML = `<div class="card border-light ${producto.sexo} ${producto.tipo} ${producto.nombre}">
+                                <img src="${producto.img}" class="card-img-top img-product " alt="${producto.nombre}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${producto.nombre}</h5>
+                                    
+                                    <p id="stock"></p>
+                                    <h5 class="card-title">$${producto.precio}</h5>
+                                    <a id="boton${producto.id}" href="#" class="btn btn-prod h-50">Agregar al Carrito</a>
+                                </div>
+                            </div>`
+    contenedorProductos.appendChild(allProducts);
+    //Seleccion Talle
     const btnAgregar = document.getElementById(`boton${producto.id}`);
     btnAgregar.addEventListener('click', () => {
+        seleccionTalle()
         AgregarAlCarrito(producto.id)
-        Toastify({
-            text: "El producto ha sido añadido al carrito",
-            duration: 3000,
-            gravity: "bottom",
-            position: "right",
-            style : {
-                background: "#121212"
-            }
-        }).showToast();
+            Toastify({
+                text: "El producto ha sido añadido al carrito",
+                duration: 3000,
+                gravity: "bottom",
+                position: "right",
+                style : {
+                    background: "#121212"
+                }
+            }).showToast();
         })
-    });
+    })
+    
 };
+
+const seleccionTalle = () => {
+
+}
 
 const AgregarAlCarrito = async (id) => {
     const productos = await getData();
@@ -50,6 +59,7 @@ const mostrarCarrito = async (productoAgregar) => {
     div.className = 'productoEnCarrito'
     div.innerHTML = `   <p>${productoAgregar.nombre}</p>
                         <p>Precio: $${productoAgregar.precio}</p>
+                        <p>Talle: </p>
                         <button id="eliminar${productoAgregar.id}" class="boton-eliminar"><i class="bi bi-trash h5"></i></button>`
     contenedorCarrito.appendChild(div);
     let btnEliminar = document.getElementById(`eliminar${productoAgregar.id}`)
@@ -78,7 +88,7 @@ const actualizarCarrito = async () => {
     terminar()
 }
 
-const recuperar = () => {
+export const recuperar = () => {
     let recuperarLS = JSON.parse(localStorage.getItem('carrito'));
     for (const elemento of recuperarLS) {
         mostrarCarrito(elemento)
@@ -111,5 +121,4 @@ const terminar = () => {
         }
     })
 }
-
 
