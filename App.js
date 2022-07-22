@@ -8,24 +8,30 @@ export const mostrarProductos = async () => {
     productos.sort((a,b) => Math.random()-0.5)
     productos.forEach(producto => {
     const allProducts = document.createElement('div');
-    allProducts.className = 'producto ms-2 me-2';
+    allProducts.className = 'producto ms-5 me-5';
     allProducts.setAttribute("id","producto")
     allProducts.innerHTML = `<div class="card border-light ${producto.sexo} ${producto.tipo} ${producto.nombre}">
                                 <img src="${producto.img}" class="card-img-top img-product " alt="${producto.nombre}">
                                 <div class="card-body">
-                                    <h5 class="card-title">${producto.nombre}</h5>
-                                    
-                                    <p id="stock"></p>
-                                    <h5 class="card-title">$${producto.precio}</h5>
-                                    <a id="boton${producto.id}" href="#" class="btn btn-prod h-50">Agregar al Carrito</a>
+                                    <h5 class="card-title nombre-producto">${producto.nombre}</h5>
+                                        <h5 class="card-title">$${producto.precio}</h5>
+                                        <form class="form-talle" id="form-talle">
+                                            <select class="select-talle" id="select-talle ${producto.id}">
+                                                <option value="">Seleccionar Talle</option>
+                                                <option value="l">Large</option>
+                                                <option value="m">Medium</option>
+                                                <option value="s">Small</option>
+                                            </select>
+                                        </form>
+                                        <button class="btn btn-prod" type="submit" id="boton${producto.id}">Agregar al Carrito</button>
                                 </div>
                             </div>`
     contenedorProductos.appendChild(allProducts);
-    //Seleccion Talle
     const btnAgregar = document.getElementById(`boton${producto.id}`);
     btnAgregar.addEventListener('click', () => {
-        seleccionTalle()
-        AgregarAlCarrito(producto.id)
+        const talle = document.getElementById(`select-talle ${producto.id}`).value
+        if (talle === "l") {
+            AgregarAlCarrito(producto.id)
             Toastify({
                 text: "El producto ha sido añadido al carrito",
                 duration: 3000,
@@ -34,14 +40,34 @@ export const mostrarProductos = async () => {
                 style : {
                     background: "#121212"
                 }
-            }).showToast();
+            }).showToast()
+        } else if (talle === "m") {
+            AgregarAlCarrito(producto.id)
+            Toastify({
+                text: "El producto ha sido añadido al carrito",
+                duration: 3000,
+                gravity: "bottom",
+                position: "right",
+                style : {
+                    background: "#121212"
+                }
+            }).showToast()
+        } else if (talle === "s") {
+            AgregarAlCarrito(producto.id)
+            Toastify({
+                text: "El producto ha sido añadido al carrito",
+                duration: 3000,
+                gravity: "bottom",
+                position: "right",
+                style : {
+                    background: "#121212"
+                }
+            }).showToast()
+        } else {
+            
+        }
         })
     })
-    
-};
-
-const seleccionTalle = () => {
-
 }
 
 const AgregarAlCarrito = async (id) => {
@@ -59,7 +85,6 @@ const mostrarCarrito = async (productoAgregar) => {
     div.className = 'productoEnCarrito'
     div.innerHTML = `   <p>${productoAgregar.nombre}</p>
                         <p>Precio: $${productoAgregar.precio}</p>
-                        <p>Talle: </p>
                         <button id="eliminar${productoAgregar.id}" class="boton-eliminar"><i class="bi bi-trash h5"></i></button>`
     contenedorCarrito.appendChild(div);
     let btnEliminar = document.getElementById(`eliminar${productoAgregar.id}`)
