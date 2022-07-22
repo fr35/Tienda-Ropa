@@ -1,3 +1,7 @@
+// Para cada filtro de categoria primero seleccione las clases distintas al filtro, y les aplique un class de invisible
+// Antes de cada filtro elimino todas las class invisible asi no se mezclan los filtros entre sí
+
+
 const btnHome = document.getElementById('btn-home')
 btnHome.addEventListener('click', () => {
     const borrarInvisible = document.querySelectorAll('.hombre, .pollera, .campera, .pantalon, .abrigo, .saco, .sweater, .remera, .buzo, .mujer, .vestido')
@@ -230,7 +234,4 @@ btnMujerAbrigo.addEventListener('click', () => {
 })
 
 
-
-
-
-
+//

@@ -2,6 +2,7 @@ import { getData } from "./getData.js";
 
 let carritoDeCompras = []
 
+// Obtengo del json el array de productos, le aplico un for each donde creo el html de las cards, le agrego nombre, imagen, precio y el boton de agregar. Con los talles lo que hice fue obtener el id, y si el value no es "" que agrege el producto al carrito
 export const mostrarProductos = async () => {
     const productos = await getData();
     const contenedorProductos = document.getElementById("contenedor-productos");
@@ -11,26 +12,28 @@ export const mostrarProductos = async () => {
     allProducts.className = 'producto ms-5 me-5';
     allProducts.setAttribute("id","producto")
     allProducts.innerHTML = `<div class="card border-light ${producto.sexo} ${producto.tipo} ${producto.nombre}">
-                                <img src="${producto.img}" class="card-img-top img-product " alt="${producto.nombre}">
+                                <img src="${producto.img}" class="card-img-top img-product center" alt="${producto.nombre}">
                                 <div class="card-body">
-                                    <h5 class="card-title nombre-producto">${producto.nombre}</h5>
-                                        <h5 class="card-title">$${producto.precio}</h5>
-                                        <form class="form-talle" id="form-talle">
-                                            <select class="select-talle" id="select-talle ${producto.id}">
-                                                <option value="">Seleccionar Talle</option>
+                                    <h5 class="card-title nombre-producto center" id="nombre-producto ${producto.id}">${producto.nombre}</h5>
+                                        <h5 class="card-title center">$${producto.precio}</h5>
+                                        <form class="form-talle center" id="form-talle">
+                                            <select class="select-talle btn btn-prod mb-2" id="select-talle ${producto.id}">
+                                                <option value="">Talle</option>
                                                 <option value="l">Large</option>
                                                 <option value="m">Medium</option>
                                                 <option value="s">Small</option>
                                             </select>
                                         </form>
-                                        <button class="btn btn-prod" type="submit" id="boton${producto.id}">Agregar al Carrito</button>
+                                        <div class="center">
+                                        <button class="btn btn-prod center" type="submit" id="boton${producto.id}">Agregar al Carrito</button>
+                                        </div>
                                 </div>
                             </div>`
     contenedorProductos.appendChild(allProducts);
     const btnAgregar = document.getElementById(`boton${producto.id}`);
     btnAgregar.addEventListener('click', () => {
         const talle = document.getElementById(`select-talle ${producto.id}`).value
-        if (talle === "l") {
+        if (talle !== "") {
             AgregarAlCarrito(producto.id)
             Toastify({
                 text: "El producto ha sido añadido al carrito",
@@ -41,34 +44,11 @@ export const mostrarProductos = async () => {
                     background: "#121212"
                 }
             }).showToast()
-        } else if (talle === "m") {
-            AgregarAlCarrito(producto.id)
-            Toastify({
-                text: "El producto ha sido añadido al carrito",
-                duration: 3000,
-                gravity: "bottom",
-                position: "right",
-                style : {
-                    background: "#121212"
-                }
-            }).showToast()
-        } else if (talle === "s") {
-            AgregarAlCarrito(producto.id)
-            Toastify({
-                text: "El producto ha sido añadido al carrito",
-                duration: 3000,
-                gravity: "bottom",
-                position: "right",
-                style : {
-                    background: "#121212"
-                }
-            }).showToast()
-        } else {
-            
-        }
+        } 
         })
     })
 }
+
 
 const AgregarAlCarrito = async (id) => {
     const productos = await getData();
@@ -79,12 +59,13 @@ const AgregarAlCarrito = async (id) => {
     localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
 }
 
+
 const mostrarCarrito = async (productoAgregar) => {
     const contenedorCarrito = document.getElementById('carrito-contenedor')
     let div = document.createElement('div')
     div.className = 'productoEnCarrito'
     div.innerHTML = `   <p>${productoAgregar.nombre}</p>
-                        <p>Precio: $${productoAgregar.precio}</p>
+                        <p>$${productoAgregar.precio}</p>
                         <button id="eliminar${productoAgregar.id}" class="boton-eliminar"><i class="bi bi-trash h5"></i></button>`
     contenedorCarrito.appendChild(div);
     let btnEliminar = document.getElementById(`eliminar${productoAgregar.id}`)

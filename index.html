@@ -22,7 +22,7 @@
                 <span class="navbar-toggler-icon" id="btnMenu"></span>
                 </button>
             </div>
-            <div class="offcanvas offcanvas-start sidebar" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-start sidebar center" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="filter-btns">
                     <button type="button" class="filter-btn btn-padre" id="btn-home">Home</button>
                     <button type="button" class="filter-btn btn-padre" id="btn-hombre">Hombre</button>
@@ -45,11 +45,8 @@
                 </div> 
             </div>
         </nav>
-        <div class="buscar">
-        <input id="search" type="text" class="input" placeholder="Buscar producto" required>
-        </div>
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="boton-carrito">
-        <i class="bi bi-bag" style="font-size: 2rem"><span id="contadorCarrito">0</span></i>
+        <button type="button" class="btn position-relative" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="boton-carrito">
+        <i class="bi bi-bag" style="font-size: 2rem"><span id="contadorCarrito" class="contadorCarrito">0</span></i>
         </button>
     </header>
 

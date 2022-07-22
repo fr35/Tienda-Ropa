@@ -7,6 +7,11 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 header {
   display: flex;
@@ -35,9 +40,6 @@ footer ul li a {
   font-size: 1.6rem;
 }
 .sidebar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   max-width: 60%;
   background-color: #121212;
 }
@@ -77,6 +79,9 @@ footer ul li a {
 #boton-carrito:hover {
   color: white;
 }
+.contadorCarrito {
+  font-size: 22px;
+}
 #contenedor-productos {
   margin: 20px auto;
   display: flex;
@@ -90,45 +95,23 @@ footer ul li a {
 }
 .card {
   width: 15rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .card-title {
-  display: flex;
-  justify-content: center;
   letter-spacing: 2px;
-}
-.form-select {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.stock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .btn-prod {
   background-color: #121212;
   color: white;
-  display: flex;
-  justify-content: center;
 }
 .btn-prod:hover {
   color: white;
 }
-.modal-contenedor {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .productoEnCarrito {
   margin: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 .boton-eliminar {
   background-color: white;
